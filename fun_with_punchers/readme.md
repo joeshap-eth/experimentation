@@ -2,6 +2,7 @@
 ```console
 geth.exe --syncmode light --http
 ```
+from the location where geth.exe lives. For example C:\Program Files\Geth
 
 ## To run the python once the node is running:
 run testing_get_nft_info.py in visual studio code with the play button.
