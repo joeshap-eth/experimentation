@@ -32,7 +32,7 @@ symbol = cc.symbol()
 # print(f'The token at {contract_address} is {name} ({symbol}).')
 
 
-def get_puncher_info(token_id):
+def get_puncher_info(token_id, name):
     # Call the tokenURI() function of the contract to retrieve the metadata URI for the given token ID
     metadata_uri = token_contract.functions.tokenURI(token_id).call()
 
@@ -43,7 +43,7 @@ def get_puncher_info(token_id):
     # print("get metadata json complete")
 
     # Extract the desired metadata fields from the metadata JSON
-    name = metadata_json['name']
+    # name = metadata_json['name']
     description = metadata_json['description']
     image_url = metadata_json['image']
     attributes = metadata_json['attributes']
@@ -66,14 +66,3 @@ def get_puncher_info(token_id):
             gauntlet = attribute['value']
     
     return f"{name} is a {clan}. He wields a {weapon} as a weapon and a {gauntlet} as a gauntlet"
-
-fighter_one_token_id = 4915
-fighter_one_info = get_puncher_info(fighter_one_token_id)
-# print(fighter_one_info)
-
-fighter_two_token_id = 3825
-fighter_two_info = get_puncher_info(fighter_two_token_id)
-# print(fighter_two_info)
-
-prompt = f"Describe an epic battle between two gladiators. Only one victor should remain standing at the end and it should be random which gladiator that is. Here is a description of gladiator 1: {fighter_one_info}. Here is a description of gladiator 2: {fighter_two_info}."
-# print(prompt)
