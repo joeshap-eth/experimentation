@@ -68,7 +68,7 @@ def get_puncher_info(token_id):
         if attribute['trait_type'] == 'Gauntlet':
             gauntlet = attribute['value']
     
-    return f"{name} is a {clan}. He weilds a {weapon} as a weapon and a {gauntlet} as a gauntlet."
+    return f"{name} is a {clan}. He wields a {weapon} as a weapon and a {gauntlet} as a gauntlet"
 
 fighter_one_token_id = 4915
 fighter_one_info = get_puncher_info(fighter_one_token_id)
@@ -78,10 +78,5 @@ fighter_two_token_id = 3825
 fighter_two_info = get_puncher_info(fighter_two_token_id)
 print(fighter_two_info)
 
-# TODO: connect this with opensea api to generate a fight based on two token ids.
-# Other ideas: 
-# Give users more freedom on which attributes are referenced. 
-# Perhaps allow users to choose up to 4 attributes.
-# Perhaps create a web page view where this all renders. Or somehow expose this,
-# even if it's only available when I'm running it.
-# Maybe there is something I can do with this related to mutant hounds or apecoin.
+prompt = f"Describe an epic battle between two gladiators. Only one victor should remain standing at the end and it should be random which gladiator that is. Here is a description of gladiator 1: {fighter_one_info}. Here is a description of gladiator 2: {fighter_two_info}."
+print(prompt)
