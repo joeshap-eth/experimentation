@@ -18,11 +18,11 @@ Set OpenAI API key in your environment.
 
 Then, run the code
 ```console
-python get_gpt_response.py <token_id1> <name1> <token_id2> <name2>
+python cockpunch_open_ai_script.py <token_id1> <name1> <token_id2> <name2>
 ```
 Example values:
 ```console
-python get_gpt_response.py 4915 Ninja 3825 TNG
+python cockpunch_open_ai_script.py 4915 Ninja 3825 TNG
 ```
 
 ## Future enhancements and ideas
